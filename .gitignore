@@ -1,0 +1,36 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+backend/venv/
+backend/db.sqlite3
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# Build/cache
+.cache/
+.pytest_cache/
+frontend/.vite/
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+frontend/.env
+backend/.env
+
+# Test/report artifacts
+coverage/
+htmlcov/
+playwright-report/
