@@ -59,3 +59,23 @@ python manage.py runserver
 ## Database
 
 Uses SQLite by default. For production, switch to PostgreSQL by updating `DATABASES` in `settings.py`.
+
+## Render Deployment
+
+Recommended Render settings:
+
+- Root Directory: `backend`
+- Build Command: `bash build.sh`
+- Start Command: `gunicorn aurelia_backend.wsgi:application`
+
+Recommended environment variables:
+
+```env
+DEBUG=False
+DJANGO_SECRET_KEY=replace-this-with-a-long-random-secret
+FRONTEND_BASE_URL=https://your-frontend-domain.vercel.app
+ALLOWED_HOSTS=your-backend-name.onrender.com
+CORS_ALLOWED_ORIGINS=https://your-frontend-domain.vercel.app
+CSRF_TRUSTED_ORIGINS=https://your-frontend-domain.vercel.app
+DATABASE_URL=<render-postgres-internal-database-url>
+```
